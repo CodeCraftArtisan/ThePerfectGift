@@ -1,0 +1,17 @@
+ theme: {
+    extend: {
+      colors: {
+        blanc: "#fcf8f4", bg-blanc
+        lightBlue: "#D6E2E9", bg-lightBlue
+        darkBlue: "#99C1DE", bg-darkBlue
+        darkestBlue: "#7FAECC",
+        rose: "#FDE2E4",
+        darkRose: "#F7A9C3",
+      },
+      textColor: {
+        primary: "#554c44", text-primary
+        secondary: "#7d766e", text-secondary
+        accent: "#afaaa4", text-accent
+      },
+    },
+  },
