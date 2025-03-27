@@ -19,22 +19,35 @@
     </div>
   </section>
 
-  <h2>Product List</h2>
-
-  <div *ngIf="products$ | async as products; else loading">
-    <ul>
-      <li *ngFor="let product of products">
-        <h3>{{ product.name }}</h3>
-        <p>Price: {{ product.price | currency }}</p>
-        <p>{{ product.description }}</p>
-        <p>ID: {{ product.id }}</p>
-      </li>
-    </ul>
-  </div>
+  <section class="py-10 px-4 lg:px-0 mx-auto max-w-screen-xl ">
   
-
-<ng-template #loading>
-  <p>Loading products...</p>
-</ng-template>
-
+    
+    <div *ngIf="products$ | async as products; else loading" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div *ngFor="let product of products" class="card card-compact overflow-hidden transform transition-transform hover:-translate-y-1">
+        <a [routerLink]="['/product-details', product.id]" class="block pb-4">
+          <!-- <figure class="h-64 w-full bg-gray-100 relative">
+            <img *ngIf="product.thumbnail" 
+              [src]="product.thumbnail.url" 
+              [alt]="product.name" 
+              class="object-cover h-full w-full rounded" />
+            
+            <div *ngIf="!product.thumbnail" class="h-full w-full bg-gray-200 flex items-center justify-center">
+              <p class="text-gray-500">No image available</p>
+            </div>
+          </figure> -->
+          <div class="card-body mt-4 bg-white text-center">
+            <div class="flex justify-between">
+              <p class="w-full text-primary text-lg mb-2">{{ product.name }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  
+    <!-- Loading Template -->
+    <ng-template #loading>
+      <p>Loading products...</p>
+    </ng-template>
+  </section>
+  
   

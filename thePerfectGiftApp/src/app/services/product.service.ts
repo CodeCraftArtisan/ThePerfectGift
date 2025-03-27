@@ -25,7 +25,7 @@ export class ProductService {
 
   getProductById(id: string): Observable<Product> {
 
-    const productDoc = doc(this.firestore, `gift-products/010`); // Reference to the specific document
+    const productDoc = doc(this.firestore, `gift-products/${id}`); // Reference to the specific document
  
     return docData(productDoc, { idField: 'id' }) as Observable<Product>; // Fetch the document data
  
