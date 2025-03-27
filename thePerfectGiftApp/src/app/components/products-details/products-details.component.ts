@@ -54,7 +54,7 @@ export class ProductsDetailsComponent implements OnInit {
         name: this.product.name,
         price: this.product.price,
         quantity: 1,
-        imageUrl: this.product.imageUrls[0],  // Use the first image as imageUrl
+        imageUrl: "IMPORTANT TO CHANGE IMAGE HERE BACK TO TAKE IMAGE ",  // Use the first image as imageUrl
       };
       this.cartService.addToCart(productToAdd);
     }
