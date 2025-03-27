@@ -12,9 +12,11 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideFirebaseApp(() => {
       const app = initializeApp(environment.firebase);
-      console.log('Firebase app initialized:', app); // Debugging line
       return app;
     }),
-    provideFirestore(() => getFirestore()),
+    provideFirestore(() => {
+      const firestore = getFirestore();
+      return firestore;
+    }),
   ],
 };

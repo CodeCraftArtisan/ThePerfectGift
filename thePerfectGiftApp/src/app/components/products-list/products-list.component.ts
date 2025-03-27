@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Product, ProductService } from '../../services/product.service'; // Adjust path as needed
 
 import { Observable } from 'rxjs';

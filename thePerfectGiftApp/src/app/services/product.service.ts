@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { inject, Injectable } from '@angular/core';
+import { collectionData, docData, Firestore } from '@angular/fire/firestore';
+import { collection, doc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 
 // Define an interface for your Product data 
@@ -18,15 +19,23 @@ export interface Product {
 })
 export class ProductService {
 
-  private productsCollection: AngularFirestoreCollection<Product>;
+  private firestore: Firestore = inject(Firestore); // Use `inject()` instead of constructor injection
 
-  constructor(private afs: AngularFirestore) {
-    this.productsCollection = afs.collection<Product>('gift-products'); // Replace 'products' with your collection name
+  productsCollection = collection(this.firestore, 'products');
+
+  getProductById(id: string): Observable<Product> {
+
+    const productDoc = doc(this.firestore, `gift-products/010`); // Reference to the specific document
+ 
+    return docData(productDoc, { idField: 'id' }) as Observable<Product>; // Fetch the document data
+ 
   }
 
   getProducts(): Observable<Product[]> {
-    return this.productsCollection.valueChanges({ idField: 'id' });
+    const productsCollection = collection(this.firestore, 'gift-products'); // Ensure collection name is correct
+    return collectionData(productsCollection, { idField: 'id' }) as Observable<Product[]>;
   }
+  
 
   // You can add more methods here for adding, updating, and deleting products
 }
