@@ -65,11 +65,11 @@
           </div>
   
           <!-- Add to Cart Form -->
-          <form class="space-y-4">
-            <button type="submit" class="w-full items-center justify-center px-5 py-3 text-base font-semibold text-center rounded-full bg-[#768948] hover:bg-[#5a6b32] transition ease-in text-white">
-              Ajouter au panier
-            </button>
-          </form>
+          <button type="button" class="w-full items-center justify-center px-5 py-3 text-base font-semibold text-center rounded-full bg-[#768948] hover:bg-[#5a6b32] transition ease-in text-white"
+            (click)="addToCart()">
+            Ajouter au panier
+          </button>
+        
   
           <!-- Product Availability -->
           <div class="mt-6">
