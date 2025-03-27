@@ -4,6 +4,8 @@ import {AboutComponent} from './components/about/about.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {ProductsListComponent} from './components/products-list/products-list.component';
 import {ProductsDetailsComponent} from './components/products-details/products-details.component';
+import {CartComponent} from './components/cart/cart.component';
+import path from 'path';
 
 
 
@@ -13,5 +15,6 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'products-list', component: ProductsListComponent },
-  { path: 'product-details/:id', component: ProductsDetailsComponent }
+  { path: 'product-details/:id', component: ProductsDetailsComponent },
+  { path: 'cart', component: CartComponent }
 ];

@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router'; // Import RouterModule
-import { Product, ProductService } from '../../services/product.service'; // Adjust path as needed
+import { ActivatedRoute, RouterModule } from '@angular/router'; 
+import { Product, ProductService } from '../../services/product.service'; 
+import { CartItem, CartService } from '../../services/cart.service';
+
 
 @Component({
   selector: 'app-products-details',
-  standalone: true,  // Marking this component as standalone
-  imports: [CommonModule, RouterModule],  // Add RouterModule here to provide ActivatedRoute and RouterLink
+  standalone: true,  
+  imports: [CommonModule, RouterModule],  //
   templateUrl: './products-details.component.html',
   styleUrls: ['./products-details.component.css']
 })
 export class ProductsDetailsComponent implements OnInit {
 
-  product: Product | undefined;  // Product data
+  product: Product | undefined;  
   currentImageIndex: number = 0; // For carousel functionality
 
   constructor(
-    private route: ActivatedRoute,  // Inject ActivatedRoute
-    private productService: ProductService
+    private route: ActivatedRoute,  
+    private productService: ProductService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -44,4 +47,17 @@ export class ProductsDetailsComponent implements OnInit {
       this.currentImageIndex--;
     }
   }
+  addToCart(): void {
+    if (this.product) {
+      const productToAdd: CartItem = {
+        id: Number(this.product.id),  // Convert to number
+        name: this.product.name,
+        price: this.product.price,
+        quantity: 1,
+        imageUrl: this.product.imageUrls[0],  // Use the first image as imageUrl
+      };
+      this.cartService.addToCart(productToAdd);
+    }
+  }
+  
 }
