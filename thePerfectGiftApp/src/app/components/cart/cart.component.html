@@ -1,22 +1,63 @@
-<div class="cart-container">
-    <h2>Your Cart</h2>
-    
-    <div *ngIf="cartItems.length === 0">
-      <p>Your cart is empty.</p>
-    </div>
-    
-    <div *ngFor="let item of cartItems" class="cart-item">
-      <img [src]="item.imageUrl" alt="{{ item.name }}" class="cart-item-image">
-      <div class="cart-item-details">
-        <h3>{{ item.name }}</h3>
-        <p>Price: ${{ item.price }}</p>
-        <p>Quantity: {{ item.quantity }}</p>
-        <button (click)="removeItem(item.id)">Remove</button>
+<div class="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-8 ">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Cart Items -->
+      <div class="lg:col-span-2 ">
+        <div *ngIf="cartItems.length === 0" class="text-center text-lg text-secondary">
+          <p>Your cart is empty.</p>
+        </div>
+        
+        <div *ngFor="let item of cartItems" class="rounded-lg p-6 mb-6 bg-[#fcf8f4]">
+          <div class="flex items-center justify-between">
+            <img
+              [src]="item.imageUrl"
+              alt="{{ item.name }}"
+              class="w-36 h-36 object-cover rounded-md "
+            />
+            <div>
+              <h2 class="text-lg font-semibold text-[#554c44] mb-2">{{ item.name }}</h2>
+              <p class="text-[#7d766e] mb-2">Prix: {{ item.price }}€</p>
+              <p class="text-[#7d766e]">Quantité: {{ item.quantity }}</p>
+            </div>
+            <button 
+              (click)="removeItem(item.id)" 
+              class="px-4 py-2 text-base font-semibold rounded-full bg-darkRose hover:bg-[#F37A9E] transition ease-in text-blanc">
+              Supprimer
+            </button>
+          </div>
+        </div>
+        
+        <button 
+          (click)="clearCart()" 
+          class="w-full items-center justify-center px-5 py-3 text-base font-semibold text-center rounded-full bg-darkRose hover:bg-[#F37A9E] transition ease-in text-blanc">
+         Vider le panier
+        </button>
+      </div>
+  
+      <!-- Cart Summary -->
+      <div class="rounded-lg p-6 bg-white shadow-md lg:h-auto"> 
+        <h3 class="text-xl font-semibold text-primary mb-4">Total Amount</h3>
+        <div class="flex justify-between text-lg text-secondary mb-4">
+          <span>Subtotal:</span>
+          <span>${{ totalPrice }}</span>
+        </div>
+        <div class="flex justify-between text-lg text-secondary mb-4">
+          <span>Shipping:</span>
+          <span>from $5.00</span>
+        </div>
+        <div class="border-t pt-4 flex justify-between text-2xl text-primary">
+          <span>Total:</span>
+          <span>${{ totalPrice + 5 }}</span>
+        </div>
+        
+        <div class="mt-6">
+            <!-- (click)="proceedToCheckout()" -->
+          <button
+            
+            class="w-full items-center justify-center px-5 py-3 text-base font-semibold text-center rounded-full bg-[#768948] hover:bg-[#5a6b32] transition ease-in text-blanc">
+            Vers le Paiement
+          </button>
+        </div>
       </div>
     </div>
+  </div>
   
-    <div class="cart-total">
-      <h3>Total: ${{ totalPrice }}</h3>
-      <button (click)="clearCart()">Clear Cart</button>
-    </div>
-</div>
