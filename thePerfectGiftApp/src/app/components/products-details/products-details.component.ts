@@ -52,6 +52,7 @@ export class ProductsDetailsComponent implements OnInit {
       const productToAdd: CartItem = {
         id: Number(this.product.id),  // Convert to number
         name: this.product.name,
+        stripeID: this.product.stripeID,
         price: this.product.price,
         quantity: 1,
         imageUrl: "IMPORTANT TO CHANGE IMAGE HERE BACK TO TAKE IMAGE ",  // Use the first image as imageUrl

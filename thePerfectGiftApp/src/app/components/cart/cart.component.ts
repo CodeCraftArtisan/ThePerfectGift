@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService, CartItem } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
+import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,28 +11,38 @@ import { CommonModule } from '@angular/common';
 })
 
 export class CartComponent implements OnInit {
-  cartItems: CartItem[] = [];  // Define cartItems as CartItem[]
-  totalPrice = 0;
+  cartItems: CartItem[] = [];
+  totalPrice: number = 0;
 
-  constructor(private cartService: CartService) {}
+  constructor(private checkoutService: CheckoutService, private cartService: CartService) {}
 
-  ngOnInit(): void {
-    this.cartItems = this.cartService.getCart();
-    this.totalPrice = this.cartService.getTotal();
+  ngOnInit() {
+    this.cartService.cart$.subscribe(items => {
+      this.cartItems = items;
+      this.calculateTotal();
+    });
   }
 
-  removeItem(productId: number): void {
+  calculateTotal() {
+    this.totalPrice = this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }
+
+  proceedToCheckout() {
+    if (this.cartItems.length === 0) {
+      alert('Your cart is empty.');
+      return;
+    }
+
+    this.checkoutService.createCheckoutSession(this.cartItems).subscribe(response => {
+      window.location.href = response.url; // Redirect to Stripe Checkout
+    });
+  }
+
+  removeItem(productId: number) {
     this.cartService.removeFromCart(productId);
-    this.updateCart();
   }
 
-  clearCart(): void {
+  clearCart() {
     this.cartService.clearCart();
-    this.updateCart();
-  }
-
-  updateCart(): void {
-    this.cartItems = this.cartService.getCart();
-    this.totalPrice = this.cartService.getTotal();
   }
 }
