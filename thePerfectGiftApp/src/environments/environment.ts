@@ -17,4 +17,7 @@ export const environment = {
   appId: "1:669765197614:web:8a521da3aca2313de8e4bf"
 
   },
+  stripe:{
+    key: "sk_test_51R0NE4P2Ht3bcQxjpEGiHqe6NnAARNtB0Y8ByGHopqZuQiYBiMXh6jhvjS06VFIS1phn521HrnyU8xlL3od98ENW00TLYG1zmx",
+  }
 };

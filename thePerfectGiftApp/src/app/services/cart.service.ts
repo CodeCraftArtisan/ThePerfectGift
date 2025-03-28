@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 
 export interface CartItem {
   id: number;
@@ -14,8 +15,10 @@ export interface CartItem {
 })
 export class CartService {
   private cart: CartItem[] = [];  
-  private cartSubject = new BehaviorSubject<CartItem[]>(this.cart); // Reactive cart state
-  cart$ = this.cartSubject.asObservable(); // Observable for navbar & cart component
+  private cartSubject = new BehaviorSubject<CartItem[]>(this.cart);
+  cart$ = this.cartSubject.asObservable();
+
+  constructor(private functions: AngularFireFunctions) {}
 
   getCart(): CartItem[] {  
     return [...this.cart];
@@ -29,12 +32,12 @@ export class CartService {
     } else {
       this.cart.push({ ...product, quantity: 1 });
     }
-    this.cartSubject.next([...this.cart]); // Notifies navbar & cart component
+    this.cartSubject.next([...this.cart]);
   }
 
   removeFromCart(productId: number): void {
     this.cart = this.cart.filter(item => item.id !== productId);
-    this.cartSubject.next([...this.cart]); 
+    this.cartSubject.next([...this.cart]);
   }
 
   getTotal(): number {
@@ -43,6 +46,23 @@ export class CartService {
 
   clearCart(): void {
     this.cart = [];
-    this.cartSubject.next([...this.cart]); 
+    this.cartSubject.next([...this.cart]);
+  }
+
+  // Checkout method uses the injected AngularFireFunctions
+  async checkout() {
+    const callable = this.functions.httpsCallable('stripeCheckout');
+    
+    try {
+      const result = await callable({ cartItems: this.cart }).toPromise();
+      if (result && result.sessionId) {
+        // Redirect to Stripe Checkout
+        window.location.href = `https://checkout.stripe.com/pay/${result.sessionId}`;
+      } else {
+        console.error('No session ID received');
+      }
+    } catch (error) {
+      console.error('Error during checkout:', error);
+    }
   }
 }

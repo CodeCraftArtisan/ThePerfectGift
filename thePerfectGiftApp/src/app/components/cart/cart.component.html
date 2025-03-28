@@ -51,11 +51,14 @@
         
         <div class="mt-6">
             <!-- (click)="proceedToCheckout()" -->
+        <form action="/create-checkout-session" method="POST">
           <button
-            
+          id="checkout-button"
+          (click)="proceedToCheckout()"
             class="w-full items-center justify-center px-5 py-3 text-base font-semibold text-center rounded-full bg-[#768948] hover:bg-[#5a6b32] transition ease-in text-blanc">
             Vers le Paiement
           </button>
+        </form>
         </div>
       </div>
     </div>

@@ -34,4 +34,15 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartService.getCart();
     this.totalPrice = this.cartService.getTotal();
   }
+
+  proceedToCheckout(): void {
+    this.cartService.checkout().then((response: any) => {
+      if (response.sessionId) {
+        window.location.href = `https://checkout.stripe.com/pay/${response.sessionId}`;
+      } else {
+        console.error("Error creating checkout session", response.error);
+      }
+    });
+  }
+  
 }
