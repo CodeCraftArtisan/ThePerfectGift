@@ -125,31 +125,22 @@
       
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <button routerLink="/cart" type="button" class="inline-flex items-center rounded-lg justify-center p-2 font-medium leading-none hover:bg-[#FDE2E4]  text-base text-[#554c44] hover:text-pink-400"> 
-            <svg
-            class="w-5 h-5 lg:me-1"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
-            />
-          </svg>Mon panier</button>
-        <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-[#554c44] rounded-lg md:hidden hover:bg-[#afaaa4] focus:outline-none focus:ring-2 focus:ring-[#7d766e] " aria-controls="navbar-cta" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
+      <a 
+        routerLink="/cart" 
+        type="button" 
+        class="inline-flex items-center rounded-lg justify-center p-2 font-medium leading-none text-base 
+               transition-transform duration-300 ease-in-out hover:scale-105" 
+        [ngClass]="{'bg-[#FDE2E4] text-pink-400': hasItemsInCart, 'bg-blue-100 text-blue-400': !hasItemsInCart}">
+        <svg class="w-5 h-5 lg:me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+        </svg>
+        Mon panier
+      </a>
     </div>
+    
+    
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
         <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 text-[#554c44] gap-2">
             <li>
