@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { NgClass } from '@angular/common';
+import { LanguageMenuComponent } from './language-menu/language-menu.component';
 
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, NgClass],
+  imports: [RouterLink, NgClass, LanguageMenuComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

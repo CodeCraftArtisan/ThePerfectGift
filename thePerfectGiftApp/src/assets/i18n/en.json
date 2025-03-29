@@ -1,0 +1,10 @@
+{
+  "welcome": "Welcome",
+  "login": "Login",
+  "logout": "Logout",
+  "NAVBAR": {
+    "LANG_EN": "English",
+    "LANG_FR": "French",
+    "LANG_NL": "Dutch"
+  }
+}
