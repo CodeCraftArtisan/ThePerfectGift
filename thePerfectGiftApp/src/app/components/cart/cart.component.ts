@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService, CartItem } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })

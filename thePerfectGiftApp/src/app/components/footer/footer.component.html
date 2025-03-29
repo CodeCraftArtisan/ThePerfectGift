@@ -1,56 +1,64 @@
 <footer class="px-4 py-8 bg-[#f2efea]">
-    <div class="mx-auto max-w-screen-xl">
-      <div class="md:flex md:justify-between">
-        <div class="mb-6 md:mb-0">
-          <a routerLink="/" class="flex items-center">
-            <img
-              src="assets/images/logo-transparent.png"
-              class="mr-3 h-20"
-              alt="La Boutique de Cadeaux"
-            />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap text-[#554c44]">
-              The Perfect Gift
-            </span>
-          </a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4">
-            <div>
-              <h2 class="md:mb-6 mb-2 text-sm font-semibold uppercase text-primary">Contact</h2>
-              <ul class="text-secondary">
-                <li class="mb-4">
-                  <a href="mailto:the.perfect.gift.antwerpen@gmail.com"
-                    class="relative text-base font-medium hover:text-[#afaaa] duration-100 ease-in after:content-[''] after:absolute after:h-[2px] after:bg-[#554c44] after:left-0 after:-bottom-1 after:w-full after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100">
-                    the.perfect.gift.antwerpen&#64;gmail.com
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 class="md:mb-6 mb-2 text-sm font-semibold text-primary uppercase">Socials</h2>
-              <ul class="text-secondary">
-                <li class="md:mb-4 mb-1">
-                  <a href="https://www.instagram.com/the.perfect.gift.antwerpen?igsh=MTlobnpmemYyMGU3"
-                    class="relative text-base font-medium hover:text-[#afaaa] duration-100 ease-in after:content-[''] after:absolute after:h-[2px] after:bg-[#554c44] after:left-0 after:-bottom-1 after:w-full after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100">
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.tiktok.com/@the.perfect.gift3?_t=ZN-8ue455o8Jss&_r=1"
-                    class="relative text-base font-medium hover:text-[#afaaa] duration-100 ease-in after:content-[''] after:absolute after:h-[2px] after:bg-[#554c44] after:left-0 after:-bottom-1 after:w-full after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100">
-                    TikTok
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
+  <div class="mx-auto max-w-screen-xl">
+    <div class="md:flex md:justify-between">
+      <div class="mb-6 md:mb-0">
+        <a routerLink="/" class="flex items-center">
+          <img
+            src="assets/images/logo-transparent.png"
+            class="mr-3 h-20"
+            alt="{{ 'footer.logoAlt' | translate }}"
+          />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-[#554c44]">
+            {{ 'footer.title' | translate }}
+          </span>
+        </a>
       </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm sm:text-center text-primary">
-          &copy; 2025 The Perfect Gift. Tous droits réservés.
-        </span>
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4">
+        <div>
+          <h2 class="md:mb-6 mb-2 text-sm font-semibold uppercase text-primary">
+            {{ 'footer.contact' | translate }}
+          </h2>
+          <ul class="text-secondary">
+            <li class="mb-4">
+              <a
+                href="mailto:the.perfect.gift.antwerpen@gmail.com"
+                class="relative text-base font-medium hover:text-[#afaaa] duration-100 ease-in after:content-[''] after:absolute after:h-[2px] after:bg-[#554c44] after:left-0 after:-bottom-1 after:w-full after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+              >
+                the.perfect.gift.antwerpen&#64;gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="md:mb-6 mb-2 text-sm font-semibold text-primary uppercase">
+            {{ 'footer.socials' | translate }}
+          </h2>
+          <ul class="text-secondary">
+            <li class="md:mb-4 mb-1">
+              <a
+                href="https://www.instagram.com/the.perfect.gift.antwerpen?igsh=MTlobnpmemYyMGU3"
+                class="relative text-base font-medium hover:text-[#afaaa] duration-100 ease-in after:content-[''] after:absolute after:h-[2px] after:bg-[#554c44] after:left-0 after:-bottom-1 after:w-full after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+              >
+                {{ 'footer.instagram' | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/@the.perfect.gift3?_t=ZN-8ue455o8Jss&_r=1"
+                class="relative text-base font-medium hover:text-[#afaaa] duration-100 ease-in after:content-[''] after:absolute after:h-[2px] after:bg-[#554c44] after:left-0 after:-bottom-1 after:w-full after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+              >
+                {{ 'footer.tiktok' | translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </footer>
-  
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm sm:text-center text-primary">
+        &copy; 2025 {{ 'footer.copyright' | translate }}
+      </span>
+    </div>
+  </div>
+</footer>

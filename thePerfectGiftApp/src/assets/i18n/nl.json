@@ -6,5 +6,63 @@
     "LANG_EN": "Engels",
     "LANG_FR": "Frans",
     "LANG_NL": "Nederlands"
+  },
+  "home": {
+    "title": "Geef cadeaus die een verhaal vertellen",
+    "subtitle": "Personaliseer elk detail voor herinneringen die blijven.",
+    "shopButton": "Shop je cadeaus"
+  },
+  "about": {
+    "title": "Over ons",
+    "intro": "Welkom bij",
+    "brandName": "The Perfect Gift",
+    "founderInfo": "waar elk cadeau een echt kunstwerk is, gemaakt met passie, zorg en een unieke persoonlijke toets. Opgericht door",
+    "founderName": "Cornelia V.",
+    "handmadeProducts": "Elk item dat we aanbieden is handgemaakt, met bijzondere aandacht voor detail, zodat elk cadeau niet alleen mooi is, maar ook betekenisvol. Wij geloven dat gepersonaliseerde cadeaus meer zijn dan alleen objecten: het zijn boodschappen, emoties en herinneringen die we in ons hart dragen.",
+    "commitment": "Onze belofte is simpel: wij bieden handgemaakte creaties, vol zorg en passie, zodat je momenten van geluk kunt geven aan de mensen van wie je houdt. Of het nu gaat om een verjaardag, bruiloft, geboorte of andere speciale gelegenheid, wij streven ernaar elke gelegenheid nog unieker en gedenkwaardiger te maken.",
+    "thankYou": "Bedankt dat je deel uitmaakt van dit ambachtelijke avontuur. Elke bestelling is voor ons een nieuwe kans om onze passie te delen en wat magie in je dagelijkse gebaren te brengen."
+  },
+  "cart": {
+    "empty": "Je winkelmandje is leeg.",
+    "price": "Prijs",
+    "quantity": "Aantal",
+    "remove": "Verwijderen",
+    "clear": "Leeg winkelmandje",
+    "totalAmount": "Totaalbedrag",
+    "subtotal": "Subtotaal",
+    "shipping": "Verzending",
+    "shippingCost": "vanaf €5,00",
+    "total": "Totaal",
+    "checkout": "Ga naar Afrekenen"
+  },
+  "footer": {
+    "logoAlt": "De Cadeauwinkel",
+    "title": "The Perfect Gift",
+    "contact": "Contact",
+    "socials": "Sociale Media",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "copyright": "The Perfect Gift. Alle rechten voorbehouden."
+  },
+  "navbar": {
+    "fast_production_delivery": "Snelle productie en levering",
+    "secure_payment": "100% veilige betaling!",
+    "cart": "Mijn winkelmandje",
+    "home": "Home",
+    "about": "Over ons",
+    "gifts": "Onze Cadeaus"
+  },
+  "product": {
+    "previous": "Vorige",
+    "next": "Volgende",
+    "add_to_cart": "Toevoegen aan winkelmandje",
+    "in_stock": "Op voorraad",
+    "available": "Dit product is beschikbaar",
+    "shipping_within": "Verzending binnen 24 uur"
+  },
+  "product_list": {
+    "gift_idea": "Cadeau Ideeën",
+    "description": "Geef meer dan een cadeau, creëer een emotie. Ontdek onze collectie gepersonaliseerde cadeaus voor elke gelegenheid en elke bijzondere persoon. Elk detail is ontworpen om je herinneringen om te zetten in onvergetelijke momenten, want de mooiste cadeaus zijn degene die een verhaal vertellen.",
+    "loading": "Producten laden..."
   }
 }

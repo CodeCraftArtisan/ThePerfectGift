@@ -4,11 +4,12 @@ import { Product, ProductService } from '../../services/product.service'; // Adj
 import { Observable } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-products-list',
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, TranslateModule],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.css'
 })

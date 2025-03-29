@@ -1,118 +1,86 @@
 <section class="py-8 md:py-16 antialiased">
-    <div class="max-w-screen-xl px-4 mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-5 xl:gap-16">
-        <!-- Product Carousel -->
-        <div class="col-span-3">
-          <div class="relative w-full">
-            <!-- Carousel wrapper -->
-            <div class="relative h-80 overflow-hidden rounded-lg md:h-[500px]">
-              <div *ngFor="let image of product?.imageUrls; let i = index">
-                <div class="hidden duration-700 ease-in-out h-full" *ngIf="i === currentImageIndex">
-                  <img
-                    [src]="image"
-                    alt="{{ product?.name }}"
-                    class="absolute block w-full object-cover h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  />
-                </div>
+  <div class="max-w-screen-xl px-4 mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-5 xl:gap-16">
+      <!-- Product Carousel -->
+      <div class="col-span-3">
+        <div class="relative w-full">
+          <!-- Carousel wrapper -->
+          <div class="relative h-80 overflow-hidden rounded-lg md:h-[500px]">
+            <div *ngFor="let image of product?.imageUrls; let i = index">
+              <div class="hidden duration-700 ease-in-out h-full" *ngIf="i === currentImageIndex">
+                <img
+                  [src]="image"
+                  alt="{{ product?.name }}"
+                  class="absolute block w-full object-cover h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                />
               </div>
             </div>
-  
-            <!-- Slider indicators -->
-            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-              <button *ngFor="let image of product?.imageUrls; let i = index"
-                type="button"
-                class="w-6 h-3 rounded-full bg-white opacity-75 hover:opacity-100"
-                [attr.aria-current]="i === currentImageIndex ? 'true' : 'false'"
-                (click)="currentImageIndex = i"
-                attr.aria-label="Slide {{ i + 1 }}"
-              ></button>
-            </div>
-  
-            <!-- Slider controls -->
-            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" (click)="previousImage()">
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/60">
-                <svg class="w-4 h-4 text-primary rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-                </svg>
-                <span class="sr-only">Previous</span>
-              </span>
-            </button>
-            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" (click)="nextImage()">
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/60">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                </svg>
-                <span class="sr-only">Next</span>
-              </span>
-            </button>
-          </div>
-        </div>
-  
-        <div class="col-span-2 lg:mt-0 border border-gray-200 rounded-lg p-6 flex  justify-center flex-col">
-          <!-- Product Title -->
-          <h1 class="text-xl font-semibold sm:text-2xl text-primary">
-            {{ product?.name }}
-          </h1>
-          <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
-            <p class="text-2xl sm:text-3xl text-secondary">
-              {{ product?.price }}€
-            </p>
           </div>
   
-          <!-- Product Description -->
-          <div class="my-6 text-primary max-h-48 overflow-y-auto">
-            <p>{{ product?.description }}</p>
+          <!-- Slider indicators -->
+          <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+            <button *ngFor="let image of product?.imageUrls; let i = index"
+              type="button"
+              class="w-6 h-3 rounded-full bg-white opacity-75 hover:opacity-100"
+              [attr.aria-current]="i === currentImageIndex ? 'true' : 'false'"
+              (click)="currentImageIndex = i"
+              attr.aria-label="Slide {{ i + 1 }}"
+            ></button>
           </div>
   
-          <!-- Add to Cart Form -->
-          <button type="button" class="w-full items-center justify-center px-5 py-3 text-base font-semibold text-center rounded-full bg-[#768948] hover:bg-[#5a6b32] transition ease-in text-white"
-            (click)="addToCart()">
-            Ajouter au panier
+          <!-- Slider controls -->
+          <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" (click)="previousImage()">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/60">
+              <svg class="w-4 h-4 text-primary rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+              </svg>
+              <span class="sr-only">{{ 'product.previous' | translate }}</span>
+            </span>
           </button>
-        
-  
-          <!-- Product Availability -->
-          <div class="mt-6">
-            <div class="w-full bg-[#ebede4] rounded-md p-5 flex items-center"> 
-                <!-- *ngIf="product?.available"  -->
-              <span class="bg-[#768948] text-white text-xs font-medium me-5 px-2.5 py-0.5 rounded-sm flex-shrink-0">En stock</span>
-              <div class="flex flex-col">
-                <p class="text-primary">Ce produit est disponible</p>
-                <p class="text-secondary">Expédition sous 24 heures</p>
-              </div>
-            </div>
-            <!-- <div *ngIf="!product?.available" class="w-full bg-[#F8C8C8] rounded-md p-5 flex items-center">
-              <span class="bg-[#E27D7A] text-white text-xs font-medium me-5 px-2.5 py-0.5 rounded-sm flex-shrink-0">En rupture de stock</span>
-              <div class="flex flex-col">
-                <p class="text-primary">Ce produit n'est pas disponible</p>
-                <p class="text-secondary">Veuillez vérifier plus tard</p>
-              </div>
-            </div> -->
-          </div>
+          <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" (click)="nextImage()">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/60">
+              <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+              </svg>
+              <span class="sr-only">{{ 'product.next' | translate }}</span>
+            </span>
+          </button>
         </div>
       </div>
   
-      <!-- Variants (optional) -->
-      <!-- <div class="max-w-screen-xl px-4 mx-auto mt-8">
-        <h3 class="text-3xl text-primary mb-8">Vous pourriez aussi aimer</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <div *ngFor="let variant of product?.variants">
-            <div class="card card-compact overflow-hidden transform transition-transform hover:-translate-y-1">
-              <a [routerLink]="['/product', variant.id]" class="block pb-4">
-                <figure class="h-64 w-full bg-gray-100 relative">
-                  <img *ngIf="variant.thumbnail" [src]="variant.thumbnail.url" [alt]="variant.name" class="object-cover h-full w-full rounded" />
-                  <div *ngIf="!variant.thumbnail" class="h-full w-full bg-gray-200 flex items-center justify-center">
-                    <p class="text-gray-500">No image available</p>
-                  </div>
-                </figure>
-                <div class="card-body mt-4 bg-white text-center">
-                  <p class="w-full text-primary text-p mb-2">{{ variant.name }}</p>
-                </div>
-              </a>
+      <div class="col-span-2 lg:mt-0 border border-gray-200 rounded-lg p-6 flex justify-center flex-col">
+        <!-- Product Title -->
+        <h1 class="text-xl font-semibold sm:text-2xl text-primary">
+          {{ product?.name }}
+        </h1>
+        <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
+          <p class="text-2xl sm:text-3xl text-secondary">
+            {{ product?.price }}€
+          </p>
+        </div>
+  
+        <!-- Product Description -->
+        <div class="my-6 text-primary max-h-48 overflow-y-auto">
+          <p>{{ product?.description }}</p>
+        </div>
+  
+        <!-- Add to Cart Form -->
+        <button type="button" class="w-full items-center justify-center px-5 py-3 text-base font-semibold text-center rounded-full bg-[#768948] hover:bg-[#5a6b32] transition ease-in text-white"
+          (click)="addToCart()">
+          {{ 'product.add_to_cart' | translate }}
+        </button>
+  
+        <!-- Product Availability -->
+        <div class="mt-6">
+          <div class="w-full bg-[#ebede4] rounded-md p-5 flex items-center">
+            <span class="bg-[#768948] text-white text-xs font-medium me-5 px-2.5 py-0.5 rounded-sm flex-shrink-0">{{ 'product.in_stock' | translate }}</span>
+            <div class="flex flex-col">
+              <p class="text-primary">{{ 'product.available' | translate }}</p>
+              <p class="text-secondary">{{ 'product.shipping_within' | translate }}</p>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
-  </section>
-  
+  </div>
+</section>

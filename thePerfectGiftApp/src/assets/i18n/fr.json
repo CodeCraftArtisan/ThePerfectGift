@@ -6,5 +6,64 @@
     "LANG_EN": "Anglais",
     "LANG_FR": "Français",
     "LANG_NL": "Néerlandais"
+  },
+  "home": {
+    "title": "Offrez des cadeaux qui racontent une histoire",
+    "subtitle": "Personnalisez chaque détail pour des souvenirs qui durent.",
+    "shopButton": "Achetez vos cadeaux"
+  },
+  "about": {
+    "title": "À propos de nous",
+    "intro": "Bienvenue chez",
+    "brandName": "The Perfect Gift",
+    "founderInfo": "où chaque cadeau est une véritable œuvre d'art, créée avec passion, soin et une touche personnelle unique. Fondée par",
+    "founderName": "Cornelia V.",
+    "handmadeProducts": "Chaque article que nous proposons est fabriqué à la main, avec une attention particulière aux détails, afin de garantir que chaque cadeau soit non seulement beau, mais aussi significatif. Nous croyons que les cadeaux personnalisés sont plus que de simples objets : ce sont des messages, des émotions et des souvenirs que l’on porte dans son cœur.",
+    "commitment": "Notre engagement est simple : vous offrir des créations faites maison, empreintes de soin et de passion, pour que vous puissiez offrir des moments de bonheur à ceux que vous aimez. Que ce soit pour un anniversaire, un mariage, une naissance ou toute autre occasion spéciale, nous nous efforçons de rendre chaque moment encore plus unique et mémorable.",
+    "thankYou": "Merci de faire partie de cette aventure artisanale. Chaque commande est pour nous une nouvelle chance de partager notre passion et de vous apporter un peu de magie dans vos gestes du quotidien."
+  },
+  "cart": {
+    "empty": "Votre panier est vide.",
+    "price": "Prix",
+    "quantity": "Quantité",
+    "remove": "Supprimer",
+    "clear": "Vider le panier",
+    "totalAmount": "Montant total",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "shippingCost": "à partir de 5,00€",
+    "total": "Total",
+    "checkout": "Vers le Paiement"
+  },
+  "footer": {
+    "logoAlt": "La Boutique de Cadeaux",
+    "title": "The Perfect Gift",
+    "contact": "Contact",
+    "socials": "Réseaux Sociaux",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "copyright": "The Perfect Gift. Tous droits réservés."
+  },
+  "navbar": {
+    "fast_production_delivery": "Production et livraison rapide",
+    "secure_payment": "Paiement 100 % sécurisé !",
+    "cart": "Mon panier",
+    "home": "Accueil",
+    "about": "À propos",
+    "gifts": "Nos Cadeaux"
+  },
+  "product": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "add_to_cart": "Ajouter au panier",
+    "in_stock": "En stock",
+    "available": "Ce produit est disponible",
+    "shipping_within": "Expédition sous 24 heures"
+  },
+  "product_list": {
+    "gift_idea": "Idée de cadeaux",
+    "description": "Offrez bien plus qu'un cadeau, créez une émotion. Explorez notre collection de cadeaux personnalisés pour chaque occasion et chaque personne qui compte. Chaque détail est pensé pour transformer vos souvenirs en moments inoubliables, parce que les plus beaux cadeaux sont ceux qui racontent une histoire.",
+    "loading": "Chargement des produits..."
   }
+
 }

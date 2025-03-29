@@ -3,11 +3,12 @@ import { RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { NgClass } from '@angular/common';
 import { LanguageMenuComponent } from './language-menu/language-menu.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, NgClass, LanguageMenuComponent],
+  imports: [RouterLink, LanguageMenuComponent, TranslateModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

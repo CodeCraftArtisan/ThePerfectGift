@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router'; 
 import { Product, ProductService } from '../../services/product.service'; 
 import { CartItem, CartService } from '../../services/cart.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-products-details',
   standalone: true,  
-  imports: [CommonModule, RouterModule],  //
+  imports: [CommonModule, RouterModule, TranslateModule],  //
   templateUrl: './products-details.component.html',
   styleUrls: ['./products-details.component.css']
 })

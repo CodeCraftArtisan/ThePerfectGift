@@ -6,5 +6,63 @@
     "LANG_EN": "English",
     "LANG_FR": "French",
     "LANG_NL": "Dutch"
+  },
+  "home": {
+    "title": "Give gifts that tell a story",
+    "subtitle": "Personalize every detail for memories that last.",
+    "shopButton": "Shop Your Gifts"
+  },
+  "about": {
+    "title": "About Us",
+    "intro": "Welcome to",
+    "brandName": "The Perfect Gift",
+    "founderInfo": "where every gift is a true work of art, created with passion, care, and a unique personal touch. Founded by",
+    "founderName": "Cornelia V.",
+    "handmadeProducts": "Every item we offer is handmade, with special attention to detail, to ensure that each gift is not only beautiful but also meaningful. We believe that personalized gifts are more than just objects: they are messages, emotions, and memories carried in the heart.",
+    "commitment": "Our commitment is simple: to offer you handmade creations, full of care and passion, so you can give moments of happiness to those you love. Whether it’s for a birthday, wedding, birth, or any other special occasion, we strive to make every moment even more unique and memorable.",
+    "thankYou": "Thank you for being part of this craft adventure. Each order is a new opportunity for us to share our passion and bring a bit of magic into your daily gestures."
+  },
+  "cart": {
+    "empty": "Your cart is empty.",
+    "price": "Price",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "clear": "Clear Cart",
+    "totalAmount": "Total Amount",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingCost": "starting from €5.00",
+    "total": "Total",
+    "checkout": "Proceed to Checkout"
+  },
+  "footer": {
+    "logoAlt": "The Gift Shop",
+    "title": "The Perfect Gift",
+    "contact": "Contact",
+    "socials": "Social Media",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "copyright": "The Perfect Gift. All rights reserved."
+  },
+  "navbar": {
+    "fast_production_delivery": "Fast production and delivery",
+    "secure_payment": "100% secure payment!",
+    "cart": "My Cart",
+    "home": "Home",
+    "about": "About",
+    "gifts": "Our Gifts"
+  },
+  "product": {
+    "previous": "Previous",
+    "next": "Next",
+    "add_to_cart": "Add to Cart",
+    "in_stock": "In stock",
+    "available": "This product is available",
+    "shipping_within": "Shipped within 24 hours"
+  },
+  "product_list": {
+    "gift_idea": "Gift Ideas",
+    "description": "Give more than a gift, create an emotion. Explore our collection of personalized gifts for every occasion and every special person. Every detail is designed to turn your memories into unforgettable moments, because the best gifts are those that tell a story.",
+    "loading": "Loading products..."
   }
 }

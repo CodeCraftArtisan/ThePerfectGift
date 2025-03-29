@@ -1,53 +1,39 @@
 <section class="pb-10 relative">
-    <!-- Full-width image with gradient overlay -->
-    <div class="relative w-screen h-[40vh] md:h-[55vh] overflow-hidden">
-      <img
-        src="assets/images/magical-moments.jpeg"
-        alt="Idée de cadeaux"
-        class="w-full h-full object-cover object-center"
-      />
-      <!-- Gradient overlay -->
-      <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white pointer-events-none"></div>
-    </div>
-  
-    <!-- Text content -->
-    <div class="mt-5 mx-auto max-w-screen-xl text-center px-4 md:px-0 relative z-10">
-      <h1 class="text-3xl md:text-4xl text-primary mb-4">Idée de cadeaux</h1>
-      <p class="text-base text-secondary">
-        Offrez bien plus qu'un cadeau, créez une émotion. Explorez notre collection de cadeaux personnalisés pour chaque occasion et chaque personne qui compte. Chaque détail est pensé pour transformer vos souvenirs en moments inoubliables, parce que les plus beaux cadeaux sont ceux qui racontent une histoire.
-      </p>
-    </div>
-  </section>
+  <!-- Full-width image with gradient overlay -->
+  <div class="relative w-screen h-[40vh] md:h-[55vh] overflow-hidden">
+    <img
+      src="assets/images/magical-moments.jpeg"
+      alt="{{ 'product_list.gift_idea' | translate }}"
+      class="w-full h-full object-cover object-center"
+    />
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white pointer-events-none"></div>
+  </div>
 
-  <section class="py-10 px-4 lg:px-0 mx-auto max-w-screen-xl ">
-  
-    
-    <div *ngIf="products$ | async as products; else loading" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <div *ngFor="let product of products" class="card card-compact overflow-hidden transform transition-transform hover:-translate-y-1">
-        <a [routerLink]="['/product-details', product.id]" class="block pb-4">
-          <!-- <figure class="h-64 w-full bg-gray-100 relative">
-            <img *ngIf="product.thumbnail" 
-              [src]="product.thumbnail.url" 
-              [alt]="product.name" 
-              class="object-cover h-full w-full rounded" />
-            
-            <div *ngIf="!product.thumbnail" class="h-full w-full bg-gray-200 flex items-center justify-center">
-              <p class="text-gray-500">No image available</p>
-            </div>
-          </figure> -->
-          <div class="card-body mt-4 bg-white text-center">
-            <div class="flex justify-between">
-              <p class="w-full text-primary text-lg mb-2">{{ product.name }}</p>
-            </div>
+  <!-- Text content -->
+  <div class="mt-5 mx-auto max-w-screen-xl text-center px-4 md:px-0 relative z-10">
+    <h1 class="text-3xl md:text-4xl text-primary mb-4">{{ 'product_list.gift_idea' | translate }}</h1>
+    <p class="text-base text-secondary">
+      {{ 'product_list.description' | translate }}
+    </p>
+  </div>
+</section>
+
+<section class="py-10 px-4 lg:px-0 mx-auto max-w-screen-xl ">
+  <div *ngIf="products$ | async as products; else loading" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div *ngFor="let product of products" class="card card-compact overflow-hidden transform transition-transform hover:-translate-y-1">
+      <a [routerLink]="['/product-details', product.id]" class="block pb-4">
+        <div class="card-body mt-4 bg-white text-center">
+          <div class="flex justify-between">
+            <p class="w-full text-primary text-lg mb-2">{{ product.name }}</p>
           </div>
-        </a>
-      </div>
+        </div>
+      </a>
     </div>
-  
-    <!-- Loading Template -->
-    <ng-template #loading>
-      <p>Loading products...</p>
-    </ng-template>
-  </section>
-  
-  
+  </div>
+
+  <!-- Loading Template -->
+  <ng-template #loading>
+    <p>{{ 'product_list.loading' | translate }}</p>
+  </ng-template>
+</section>

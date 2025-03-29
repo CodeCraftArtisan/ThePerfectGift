@@ -19,8 +19,8 @@ export class UniversalTranslateLoader implements TranslateLoader {
         const path = require('path');
 
         // Adjust path to access files correctly on the server
-        const filePath = path.resolve(__dirname, `../../browser/${this.prefix}${lang}${this.suffix}`);
-        
+        const filePath = path.join(process.cwd(), 'dist/browser', this.prefix, `${lang}${this.suffix}`);
+
         const file = fs.readFileSync(filePath, 'utf8');
         return of(JSON.parse(file));
       } catch (err) {

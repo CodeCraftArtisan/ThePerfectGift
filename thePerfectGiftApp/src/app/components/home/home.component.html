@@ -6,17 +6,17 @@
         <h1
           class="max-w-2xl mb-4 text-4xl font-semibold tracking-tight leading-none md:text-5xl"
         >
-          Offrez des cadeaux qui racontent une histoire
+        {{ 'home.title' | translate }}
         </h1>
         <p class="max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl">
-          Personnalisez chaque détail pour des souvenirs qui durent.
+          {{ 'home.subtitle' | translate }}
         </p>
   
        <a
             routerLink="/products-list"
             class="inline-flex items-center justify-center px-5 py-3 text-base font-semibold text-center rounded-full bg-[#99C1DE] hover:bg-[#7FAECC] text-[#fcf8f4] "
           >
-            Achetez vos cadeaux
+          {{ 'home.shopButton' | translate }}
           </a>
       </div>
       <div class="lg:mt-0 lg:col-span-5 flex mt-5">
